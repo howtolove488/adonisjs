@@ -1,0 +1,19 @@
+{% extends 'master' %}
+<div>
+  <p>
+    Below is the list of all the awesome posts created by all of us. You can also
+    contribute by clicking the below button.
+  </p>
+  <a href="posts/create" class="btn btn-success btn-block"> Create New Post </a>
+  <hr>
+</div>
+{% block content %}
+  <div class="posts-wrapper">
+    {% for post in posts %} 
+      <div class="post">
+        <h2><a href=""> {{ post.title }} </a></h2> 
+        <p> {{ post.content }} </p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
